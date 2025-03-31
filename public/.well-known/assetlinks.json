@@ -1,0 +1,32 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.flam.instant",
+      "sha256_cert_fingerprints": [
+        "B0:9D:9D:AE:4D:C4:52:8D:DA:4A:23:F3:FE:F8:A2:81:97:E3:29:66:FF:13:DC:24:21:41:C4:D6:A8:F9:64:15"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.flam.experience",
+      "sha256_cert_fingerprints": [
+        "B0:9D:9D:AE:4D:C4:52:8D:DA:4A:23:F3:FE:F8:A2:81:97:E3:29:66:FF:13:DC:24:21:41:C4:D6:A8:F9:64:15"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.flam.fandom",
+      "sha256_cert_fingerprints": [
+        "2A:59:D1:20:85:08:F4:D7:E4:C6:E6:52:62:DF:55:3B:5B:EB:6F:CD:AB:F4:79:2E:52:F4:8E:F3:42:B9:39:B1"
+      ]
+    }
+  }
+]

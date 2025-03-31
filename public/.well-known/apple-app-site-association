@@ -1,0 +1,53 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "K6FZYUHLAF.com.flam.flamExperience.Clip",
+                "paths": [
+                    "/e/"
+                ]
+            },
+            {
+                "appID": "K6FZYUHLAF.com.flam.flamExperience.Clip",
+                "paths": [
+                    "/e/*"
+                ]
+            },
+            {
+                "appID": "K6FZYUHLAF.com.flam.instantApp.Clip",
+                "paths": [
+                    "/card/*",
+                    "/c/*"
+                ]
+            },
+            {
+                "appID": "K6FZYUHLAF.com.flam.instantApp.Clip",
+                "paths": [
+                    "/card/",
+                    "/c/"
+                ]
+            },
+            {
+                "appID": "K6FZYUHLAF.com.flam.fandom.Clip",
+                "paths": [
+                    "/e/"
+                ]
+            },
+            {
+                "appID": "K6FZYUHLAF.com.flam.fandom.Clip",
+                "paths": [
+                    "/e/*"
+                ]
+            }
+        ]
+    },
+    "appclips": {
+        "apps": [
+            "Z5848HL9S4.com.flam.instantApp.Clip",
+            "K6FZYUHLAF.com.flam.flamExperience.Clip",
+            "K6FZYUHLAF.com.flam.instantApp.Clip",
+            "K6FZYUHLAF.com.flam.fandom.Clip"
+        ]
+    }
+}
