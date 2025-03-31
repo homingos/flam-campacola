@@ -1,7 +1,6 @@
 export const FANDOM_HOSTNAMES = new Set([
-  "xyz.flamapp.com",
-  "xyz.flamapp.co",
-  "xyz.localhost:3000",
+  "ccipl.localhost:3000",
+  "ccipl.flamapp.com",
 ]);
 
 export const CONFIG = {
