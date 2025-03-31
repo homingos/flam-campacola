@@ -3,7 +3,6 @@ import { DEFAULT_META } from "@/lib/config";
 import { headers } from "next/headers";
 import Desktop from "./desktop";
 import Mobile from "./mobile";
-import NoShortcode from "./no-shortcode";
 
 export async function generateMetadata({
   searchParams,
@@ -39,15 +38,15 @@ const Page = async ({
   const OID = searchParams?.o ?? "";
   const DEVICE_TYPE = params?.device_type ?? "";
 
-  const { data } = await getSearchUrl(OID);
+  // const { data } = await getSearchUrl(OID);
 
-  if (!OID || !data) {
-    return <NoShortcode />;
-  }
+  // if (!OID || !data) {
+  //   return <NoShortcode />;
+  // }
 
   return (
     <div className="relative p-4 h-[100dvh] w-[100dvw]">
-      {DEVICE_TYPE === "mobile" && <Mobile OID={OID} data={data} />}
+      {DEVICE_TYPE === "mobile" && <Mobile OID={OID} />}
       {DEVICE_TYPE === "desktop" && <Desktop OID={OID} />}
     </div>
   );
