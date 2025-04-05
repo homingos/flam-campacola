@@ -35,56 +35,71 @@ const TEAMS = {
 }
 
 const IPL_CONFIG: IPLConfigType = {
-  "3/1/25": [
-    {
-      image: TEAMS["LSG"].images,
-      short_code: TEAMS["LSG"].short_code,
-    },
-  ],
-  "4/1/25": [ 
+  "05/04/2025": [
     {
       image: TEAMS["SRH"].images,
       short_code: TEAMS["SRH"].short_code,
     },
+  ],
+  "06/04/2025": [
+    {
+      image: TEAMS["SRH"].images,
+      short_code: TEAMS["SRH"].short_code,
+    },
+  ],
+  "08/04/2025": [ 
+    {
+      image: TEAMS["PBKS"].images,
+      short_code: TEAMS["PBKS"].short_code,
+    },
+  ],
+  "12/04/2025": [ 
+    {
+      image: TEAMS["LSG"].images,
+      short_code: TEAMS["LSG"].short_code,
+    },
+    {
+      image: TEAMS["SRH"].images,
+      short_code: TEAMS["SRH"].short_code,
+    },
+  ],
+  "14/04/2025": [ 
     {
       image: TEAMS["LSG"].images,
       short_code: TEAMS["LSG"].short_code,
     },
   ],
-  "5/1/25": [ 
+  "15/04/2025": [ 
     {
-      image: TEAMS["LSG"].images,
-      short_code: TEAMS["LSG"].short_code,
+      image: TEAMS["PBKS"].images,
+      short_code: TEAMS["PBKS"].short_code,
     },
   ],
 };
 
 /**
- * Converts a date string in M/D/YY format to a timestamp
+ * Converts a date string in DD/MM/YYYY format to a timestamp
  */
 const dateStringToTimestamp = (dateStr: string): number => {
-  const [month, day, year] = dateStr.split("/").map(Number);
-  return new Date(2000 + year, month - 1, day).getTime();
+  const [day, month, year] = dateStr.split("/").map(Number);
+  return new Date(year, month - 1, day).getTime();
 };
 
 /**
- * Formats a date to M/D/YY format
+ * Formats a date to DD/MM/YYYY format
  */
 const formatDate = (date: Date): string => {
-  return `${date.getMonth() + 1}/${date.getDate()}/${String(
-    date.getFullYear()
-  ).slice(-2)}`;
+  return `${String(date.getDate()).padStart(2, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}/${date.getFullYear()}`;
 };
 
 /**
- * Gets IPL data for current date in IST, falls back to previous date if no match
+ * Gets IPL data for current date in GMT, falls back to previous date if no match
  * @returns Array of IPL match data for the current or previous date
  */
 export const getCurrentOrPreviousIPLData = (): IPLMatch[] => {
-  // Get current date in IST
+  // Get current date in GMT
   const now = new Date();
-  const istDate = new Date(now.getTime() + 5.5 * 60 * 60 * 1000);
-  const currentDateStr = formatDate(istDate);
+  const currentDateStr = formatDate(now);
 
   // If current date exists in config, return it
   if (IPL_CONFIG[currentDateStr]) {
@@ -110,21 +125,18 @@ export const getCurrentOrPreviousIPLData = (): IPLMatch[] => {
 };
 
 /**
- * Gets IPL data for a specific date considering IST timezone (GMT+5:30)
+ * Gets IPL data for a specific date in GMT
  * @param date - Date string in any valid format
- * @returns Array of IPL match data for the adjusted date
+ * @returns Array of IPL match data for the date
  */
 export const getIPLDataForDate = (date: string | Date): IPLMatch[] => {
   // Convert input date to Date object if it's a string
   const inputDate = typeof date === "string" ? new Date(date) : date;
 
-  // Add 5 hours and 30 minutes to convert to IST
-  const istDate = new Date(inputDate.getTime() + 5.5 * 60 * 60 * 1000);
-
   // Format the date to match our config format
-  const formattedDate = formatDate(istDate);
+  const formattedDate = formatDate(inputDate);
 
-  // Return the data for the adjusted date or empty array if no matches
+  // Return the data for the date or empty array if no matches
   return IPL_CONFIG[formattedDate] || [];
 };
 
