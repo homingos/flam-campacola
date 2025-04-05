@@ -16,21 +16,21 @@ const TEAMS = {
       vertical: "https://storage.googleapis.com/zingcam/original/images/ocz2mq3x6siie7nuqltrp122.png",
       horizontal: "https://storage.googleapis.com/zingcam/original/images/lhg0f9h6e9nekfifueu3wcrx.jpg",
     },
-    short_code: "PBKS",
+    short_code: "fjgf4e",
   },
   "SRH": {
     images: {
       vertical: "https://storage.googleapis.com/zingcam/original/images/jht9kwsdibrsvxzihxuzmoy6.png",
       horizontal: "https://storage.googleapis.com/zingcam/original/images/hrmykbdefij9k8c9xkle8mpn.png",
     },
-    short_code: "SRH",
+    short_code: "qswkyq",
   },
   "LSG": {
     images: {
       vertical: "https://storage.googleapis.com/zingcam/original/images/afflkl1n9m78j3dzefm23lt6.png",
       horizontal: "https://storage.googleapis.com/zingcam/original/images/kzt4tdqcbnxi6i1f6r9gf2m5.jpg",
     },
-    short_code: "LSG",
+    short_code: "xc0nc8",
   },
 }
 
