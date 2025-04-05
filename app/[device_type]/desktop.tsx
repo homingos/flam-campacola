@@ -2,11 +2,11 @@ import { headers } from "next/headers";
 import FlamLogo from "@/components/logo";
 import { QRCodeSVG } from "@/components/qr";
 
-const Desktop = async ({ OID }: { OID: string }) => {
+const Desktop = async () => {
   const request = await headers();
   const host = request.get("host");
   const qrData = {
-    value: `https://${host}/e?o=${OID}`,
+    value: `https://${host}/e?o=`,
     bgColor: "#ffffff",
     fgColor: "#000000",
     size: 1024,

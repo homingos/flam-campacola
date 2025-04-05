@@ -1,20 +1,19 @@
-import { NextFetchEvent, NextRequest, NextResponse } from "next/server";
-import { FANDOM_HOSTNAMES } from "./lib/config";
-import FandomMiddleware from "./lib/middleware/fandom-middleware";
+import { NextFetchEvent, NextRequest, NextResponse, userAgent } from "next/server";
 import { parse } from "./lib/middleware/utils/parse";
+import { getRequestDetails } from "./lib/middleware/utils/request";
 
 export default async function middleware(req: NextRequest, ev: NextFetchEvent) {
-  const { domain, path } = parse(req);
+  const { fullPath } = parse(req);
+  const { isAndroid, isIOS } = getRequestDetails(req);
 
-  if (path.startsWith("/.well-known")) {
-    return NextResponse.next();
-  }
+  // Get user agent details
+  const ua = userAgent(req);
+  const isMobile = ua.device.type === "mobile" || isAndroid || isIOS;
 
-  if (FANDOM_HOSTNAMES.has(domain)) {
-    return FandomMiddleware(req);
-  }
-
-  return NextResponse.next();
+  const deviceType = isMobile ? "mobile" : "desktop";
+  return NextResponse.rewrite(
+    new URL(`/${deviceType}${fullPath}`, req.url)
+  );
 }
 
 export const config = {
