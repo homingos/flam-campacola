@@ -2,6 +2,7 @@ interface IPLMatch {
   image: {
     horizontal: string;
     vertical: string;
+    avatar: string;
   };
   short_code: string;
 }
@@ -13,34 +14,31 @@ interface IPLConfigType {
 const TEAMS = {
   "PBKS": {
     images: {
-      vertical: "https://storage.googleapis.com/zingcam/original/images/ocz2mq3x6siie7nuqltrp122.png",
-      horizontal: "https://storage.googleapis.com/zingcam/original/images/lhg0f9h6e9nekfifueu3wcrx.jpg",
+      vertical: "https://storage.googleapis.com/zingcam/original/images/b6h8q242wv4icbonqjmwfs5f.png",
+      horizontal: "https://storage.googleapis.com/zingcam/original/images/et0c81vf3slsd5tlq43xouo0.png",
+      avatar: "https://storage.googleapis.com/zingcam/original/images/gpb8r5rrots5q1wyotvwk1ds.png"
     },
     short_code: "fjgf4e",
   },
   "SRH": {
     images: {
-      vertical: "https://storage.googleapis.com/zingcam/original/images/jht9kwsdibrsvxzihxuzmoy6.png",
-      horizontal: "https://storage.googleapis.com/zingcam/original/images/hrmykbdefij9k8c9xkle8mpn.png",
+      vertical: "https://storage.googleapis.com/zingcam/original/images/k8fqa2b641ruycw8v76f972u.png",
+      horizontal: "https://storage.googleapis.com/zingcam/original/images/x9xdd4527rqk8ih712jva2pl.png",
+      avatar: "https://storage.googleapis.com/zingcam/original/images/gpb8r5rrots5q1wyotvwk1ds.png"
     },
     short_code: "qswkyq",
   },
   "LSG": {
     images: {
-      vertical: "https://storage.googleapis.com/zingcam/original/images/afflkl1n9m78j3dzefm23lt6.png",
-      horizontal: "https://storage.googleapis.com/zingcam/original/images/kzt4tdqcbnxi6i1f6r9gf2m5.jpg",
+      vertical: "https://storage.googleapis.com/zingcam/original/images/utfl7w0aeap74upsrfkanlaw.png",
+      horizontal: "https://storage.googleapis.com/zingcam/original/images/m1sgwdrfuomjj4tl48jsy9in.png",
+      avatar: "https://storage.googleapis.com/zingcam/original/images/gpb8r5rrots5q1wyotvwk1ds.png"
     },
     short_code: "xc0nc8",
   },
 }
 
 const IPL_CONFIG: IPLConfigType = {
-  "05/04/2025": [
-    {
-      image: TEAMS["SRH"].images,
-      short_code: TEAMS["SRH"].short_code,
-    },
-  ],
   "06/04/2025": [
     {
       image: TEAMS["SRH"].images,
